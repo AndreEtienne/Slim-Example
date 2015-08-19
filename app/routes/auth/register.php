@@ -28,7 +28,7 @@ $app->post('/register' , function () use($app){
 
 	  $app->mail->send('email/auth/registered.php', ['user' => $user], function($message) use($user){
 		$message->to($user->email);
-		   $message->subject('Thanks for registering');
+		  $message->subject('Thanks for registering');
 	  });
 
       $app->flash('global','You have been registered');

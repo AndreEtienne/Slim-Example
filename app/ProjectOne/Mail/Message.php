@@ -3,7 +3,8 @@
 namespace ProjectOne\Mail;
 
 
-class Message{
+class Message
+{
 	protected $mailer;
 
 	public function __construct($mailer){

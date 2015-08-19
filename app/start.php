@@ -6,9 +6,10 @@ use Slim\Views\TwigExtension;
 use Noodlehaus\Config;
 
 use ProjectOne\User\User;
-use ProjectOne\Mail\Mailer;
+
 use ProjectOne\Helpers\Hash;
 use ProjectOne\Validation\Validator;
+use ProjectOne\Mail\Mailer;
 
 use ProjectOne\Middleware\BeforeMiddleware;
 
@@ -47,8 +48,9 @@ $app->container->singleton('hash', function() use ($app){
 $app->container->singleton('validation',function() use ($app){
 return new Validator($app->user);
 });
-$app->container->singleton('mail',function()use ($app){
+$app->container->singleton('mail',function() use ($app){
 	$mailer = new PHPMailer;
+	$mailer->IsSMTP();
 	$mailer->Host = $app->config->get('mail.host');
 	$mailer->SMTPAuth = $app->config->get('mail.smtp_auth');
 	$mailer->SMTPSecure = $app->config->get('mail.smtp_secure');
