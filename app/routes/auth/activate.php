@@ -1,13 +1,13 @@
 <?php
 
-$app->get('/activate', function() use ($app){
+$app->get('/activate',$guest(), function() use ($app){
    $request = $app->request;
 
     $email = $request->get('email');
     $identifier = $request->get('identifier');
     $hashedIdentifier = $app->hash->hash($identifier);
 
-  
+
 
     $user = $app->user->where('email', $email)
     ->where('active', false)
