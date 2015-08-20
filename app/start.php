@@ -13,6 +13,7 @@ use ProjectOne\Validation\Validator;
 use ProjectOne\Mail\Mailer;
 
 use ProjectOne\Middleware\BeforeMiddleware;
+use ProjectOne\Middleware\CsrfMiddleware;
 
 
 session_cache_limiter(false);
@@ -30,6 +31,7 @@ $app = new Slim([
 ]);
 
 $app->add(new BeforeMiddleware);
+$app->add(new CsrfMiddleware);
 
 $app->configureMode($app->config('mode'),function() use($app) {
    $app->config = Config::load(INC_ROOT . "/app/config/{$app->mode}.php");
