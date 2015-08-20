@@ -33,7 +33,8 @@ class Hash
 		return hash('sha256' , $input);
 	}
 
-	public  function hashCheck($know, $user){
+    public  function hashCheck($know, $user){
+
 		return hash_equals($know,$user);
 	}
 

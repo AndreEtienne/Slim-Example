@@ -1,7 +1,7 @@
 <?php
 return[
     'app' =>[
-        'url' => 'http://192.168.1.163',
+        'url' => 'http://192.168.2.104',
         'hash' =>[
             'algo' => PASSWORD_BCRYPT,
             'cost' => 10
@@ -11,7 +11,7 @@ return[
     'db' =>[
         'driver' => 'mysql',
         'host' => 'localhost',
-        'name' => 'andre',
+        'name' => 'site',
         'username' => 'root',
         'password' => 'root',
         'charset' => 'utf8',
