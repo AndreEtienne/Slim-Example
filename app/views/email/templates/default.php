@@ -4,4 +4,6 @@
 	<p>Hello there,</p>
 {% endif %}
 
-{% block content %}{%  endblock  %}
+{% block content %}
+
+{%  endblock  %}

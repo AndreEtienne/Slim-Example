@@ -1,7 +1,8 @@
 <?php
 
 $app->get('/login',$guest(), function() use($app){
-	$app->render('auth/login.php');
+	$openlig = $app->openliga;
+	$app->render('auth/login.php',['mates' => $openlig]);
 })->name('login');
 
 
