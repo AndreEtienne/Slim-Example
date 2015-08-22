@@ -11,6 +11,7 @@ namespace ProjectOne\User;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
+
 class User extends Eloquent
 {
     protected $table = 'users';
@@ -41,6 +42,11 @@ class User extends Eloquent
 			'active'  => true,
 			'active_hash' => null
 		]);
+	}
+	public  function getAvatarUrl($options = []){
+		$size = isset($options ['size'])? $options['size']: 45;
+		return 'http://www.gravatar.com/avatar/'. md5($this->email).'?s=' .$size. '&d=identicon';
+
 	}
 
 }

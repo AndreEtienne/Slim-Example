@@ -1,6 +1,8 @@
 {% extends 'templates/default.php'%}
 {% block title %}Login{% endblock %}
 {% block content %}
+
+
 <form action="{{urlFor('login.post')}}" method="post" autocomplete="off">
 	<div>
 		<label for="identifier">Username/email</label>
