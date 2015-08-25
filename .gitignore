@@ -1,4 +1,5 @@
 .idea
 composer.lock
 /vendor
-
+/app/views/bower_components
+/app/views/node_modules
