@@ -14,11 +14,7 @@
   ],
   "dependencies": {
     "bootstrap-sass-official": "*",
-    "fontawesome": "*",
     "modernizr": "*",
-    "detectizr": "*",
-    "enquire": "*",
-    "slick-carousel": "*",
-    "pushy-reloaded": "*"
+    "detectizr": "*"
   }
 }

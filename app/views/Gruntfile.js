@@ -1,6 +1,6 @@
 module.exports = function(grunt){
     grunt.initConfig({
-
+        app: grunt.file.readJSON('app.json'),
       pkg: grunt.file.readJSON('package.json'),
       watch:{
           sass:{
@@ -9,7 +9,7 @@ module.exports = function(grunt){
           },
           scirpts:{
             files: ['templates/Private/js/*.js'],
-            tasks: ['uglify'],
+            tasks: ['concat','uglify'],
           }
         },
       sass:{
@@ -25,9 +25,9 @@ module.exports = function(grunt){
           stripBanners: true,
           banner:'/*! <%= pkg.name %> -v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */',
         },
-        dist:{
-          src: ['Templates/Private/js/input2.js'],
-          dest: 'Templates/Private/js/main.min.js',
+        js:{
+          src: ['<%= app.assets.js %>'],
+          dest: 'templates/Private/js/temp.js',
         }
       },
       uglify:{
@@ -36,7 +36,7 @@ module.exports = function(grunt){
         },
         my_target:{
             files:{
-              'templates/Public/js/main.min.js':['templates/Private/componentJs/*.js','templates/Private/js/*.js']
+              'templates/Public/js/main.min.js':['templates/Private/js/temp.js']
          }
         }
       },
@@ -52,7 +52,7 @@ module.exports = function(grunt){
               expand: true,
               cwd: 'templates/Private/css/',
               src:['*.css', '!*.min.css'],
-              dest:'Templates/Public/css/',
+              dest:'templates/Public/css/',
               ext:'.min.css'
             }]
         }

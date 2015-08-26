@@ -1,0 +1,10 @@
+{
+  "assets" : {
+    "js" : [
+      "bower_components/modernizr/modernizr.js",
+      "bower_components/detectizr/dist/detectizr.js",
+      "bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js",
+      "templates/Private/js/app.js"
+    ]
+  }
+}
