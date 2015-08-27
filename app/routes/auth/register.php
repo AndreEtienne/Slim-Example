@@ -18,6 +18,7 @@ $app->post('/register', $guest(), function () use($app){
         'password' => [$password, 'required|min(6)'],
         'password_confirm' => [$passwordConfirm, 'required|matches(password)'],
   ]);
+  $v->addRuleMessage('required', 'You better fill in the {field} field, or else.');
   if ($v->passes()) {
 
 	  $identifier = $app->randomlib->generateString(128);

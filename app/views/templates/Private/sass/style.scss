@@ -1,6 +1,28 @@
 @charset "utf-8";
 @import '../../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
-
+.form-group{
+  .form-control{
+    border-radius: 0px;
+    transition: all 320ms cubic-bezier(0.55, 0, 0.1, 1);
+     &:focus{
+      box-shadow: 0 5px 10px rgba(0,0,0,.15);
+      border-color: none;
+      color: blue;
+     }
+  }
+  span{
+    color: red;
+  }
+ .app-puls{
+    -webkit-animation: pulsate 1s ease-out;
+    opacity: 0.0;
+}
+@-webkit-keyframes pulsate{
+  0% {opacity: 0.0;}
+   100% {opacity: 1.0;}
+    
+}
+}
 .main-nav{
   background-color: #536DFE;
   color: #fff;
@@ -13,5 +35,25 @@
   }
   .menu-btn{
     margin-bottom: 15px;
+  }
+}
+.btn-app-default{
+  border-radius: 0px;
+  background-color: #FFB74D;
+  color: #fff;
+  transition: all 320ms cubic-bezier(0.55, 0, 0.1, 1);
+  &:focus {
+    outline: none; 
+    color: #fff;
+  }
+  &:hover{
+    box-shadow: 0 5px 10px rgba(0,0,0,.15);
+    color: #fff;
+  }
+   &:active{
+    box-shadow: none;
+   }
+  &:active:focus{
+     outline: none; 
   }
 }
