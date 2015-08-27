@@ -1,14 +1,17 @@
 @charset "utf-8";
 @import '../../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
 
-.hallo{
-    color: red;
-}
-.what{
-    border-bottom: 1px;
-}
-.hello{
-    .hello{
-        color: black;
-    }
+.main-nav{
+  background-color: #536DFE;
+  color: #fff;
+  a{
+    color: #fff;
+  }
+  .nav-profile-pic{
+    margin-top: 15px;
+    border-radius: 100%;
+  }
+  .menu-btn{
+    margin-bottom: 15px;
+  }
 }

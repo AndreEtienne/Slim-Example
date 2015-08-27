@@ -4,3 +4,6 @@ composer.lock
 /app/views/bower_components
 /app/views/node_modules
 /app/views/.sass-cache/
+/app/views/templates/Private/css/style.css.map
+/app/views/templates/Private/css/temp.css
+/app/views/templates/Private/js/temp.js

@@ -4,7 +4,12 @@
       "bower_components/modernizr/modernizr.js",
       "bower_components/detectizr/dist/detectizr.js",
       "bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js",
+      "bower_components/pushy/js/pushy.js",
       "templates/Private/js/app.js"
+    ],
+    "css" : [
+      "bower_components/pushy/css/pushy.css",
+      "templates/Private/css/style.css"
     ]
   }
 }

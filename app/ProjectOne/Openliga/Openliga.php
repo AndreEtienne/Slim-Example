@@ -120,6 +120,7 @@ class Openliga
         return $response->GetLastChangeDateByLeagueSaisonResult;
 
     }
+  
 }
 
 //$c = 100;

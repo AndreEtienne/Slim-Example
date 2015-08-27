@@ -5,11 +5,11 @@ module.exports = function(grunt){
       watch:{
           sass:{
             files: ['templates/Private/sass/*.scss'],
-            tasks: ['sass','cssmin'],
+            tasks: ['sass','concat','cssmin'],
           },
           scirpts:{
             files: ['templates/Private/js/*.js'],
-            tasks: ['concat','uglify'],
+            tasks: ['uglify'],
           }
         },
       sass:{
@@ -28,7 +28,11 @@ module.exports = function(grunt){
         js:{
           src: ['<%= app.assets.js %>'],
           dest: 'templates/Private/js/temp.js',
-        }
+        },
+        css:{
+          src: ['<%= app.assets.css %>'],
+         dest: 'templates/Private/css/temp.css',
+       }
       },
       uglify:{
         options:{
@@ -41,22 +45,12 @@ module.exports = function(grunt){
         }
       },
       cssmin: {
-        my_target:{
-          //combine:{
-            //files: {
-              //'css/style.css':['css/style2.css', 'css/style3.css']
-            //}
-          //}
-
-          files:[{
-              expand: true,
-              cwd: 'templates/Private/css/',
-              src:['*.css', '!*.min.css'],
-              dest:'templates/Public/css/',
-              ext:'.min.css'
-            }]
+         my_target:{
+            files:{
+              'templates/Public/css/style.min.css':['templates/Private/css/temp.css']
+              }
+            }
         }
-      }
       });
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');

@@ -5795,13 +5795,15 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
-.hallo {
-  color: red; }
-
-.what {
-  border-bottom: 1px; }
-
-.hello .hello {
-  color: black; }
+.main-nav {
+  background-color: #536DFE;
+  color: #fff; }
+  .main-nav a {
+    color: #fff; }
+  .main-nav .nav-profile-pic {
+    margin-top: 15px;
+    border-radius: 100%; }
+  .main-nav .menu-btn {
+    margin-bottom: 15px; }
 
 /*# sourceMappingURL=style.css.map */

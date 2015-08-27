@@ -41,6 +41,8 @@ require 'routes.php';
 $app->auth = false;
 
 
+
+
 $app->container->set('user', function(){
     return new User;
 });
@@ -57,6 +59,7 @@ $app->container->singleton('openliga',function(){
 	$b = $open->getMatches();
 	return $b ;
 });
+
 
 
 $app->container->singleton('mail',function() use ($app){
@@ -85,5 +88,3 @@ $view->parseOptions = [
 $view->parserExtensions =[
   new TwigExtension
 ];
-
-

@@ -48,5 +48,4 @@ class User extends Eloquent
 		return 'http://www.gravatar.com/avatar/'. md5($this->email).'?s=' .$size. '&d=identicon';
 
 	}
-
 }

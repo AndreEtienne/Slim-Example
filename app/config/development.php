@@ -1,7 +1,7 @@
 <?php
 return[
     'app' =>[
-        'url' => 'http://192.168.2.104',
+        'url' => 'http://192.168.1.163',
         'hash' =>[
             'algo' => PASSWORD_BCRYPT,
             'cost' => 10
