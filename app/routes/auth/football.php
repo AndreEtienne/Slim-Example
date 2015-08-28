@@ -1,5 +1,7 @@
 <?php
 $app->get('/football' ,function() use($app){
     $openlig = $app->openliga;
-    $app->render('auth/football.php',['mates' => $openlig]);
+    $days = $app->openligaDays;
+    print_r($days) ;
+    $app->render('auth/football.php',['mates' => $openlig,'days' => $days]);
 })->name('football');

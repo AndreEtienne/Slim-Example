@@ -4,19 +4,21 @@
 
 
 <form action="{{urlFor('login.post')}}" method="post" autocomplete="off">
-	<div>
+	<div class="row">
+  <div class="form-group col-sm-6 col-sm-offset-3">
 		<label for="identifier">Username/email</label>
-		<input type="text" name="identifier" id="identifier">
+		<input class="form-control"  type="text" name="identifier" id="identifier">
 		{% if errors.first('identifier')%}{{ errors.first('identifier') }}{%endif%}
 	</div>
-	<div>
+	<div class="form-group col-sm-6 col-sm-offset-3">
 		<label for="password">Password</label>
-		<input type="password" name="password" id="password">
+		<input class="form-control"  type="password" name="password" id="password">
 		{% if errors.first('password')%}{{ errors.first('password') }}{%endif%}
 	</div>
-	<div>
-		<input type="submit" value="Login">
+	<div class="col-xs-12 col-sm-offset-3">
+		<button  class="btn btn-app-default" type="submit" value="Login">Login</button>
 	</div>
 	<input type="hidden" name="{{ csrf_key }}" value="{{ csrf_token }}">
+	</div>
 </form>
 {% endblock %}

@@ -1,6 +1,11 @@
 {% extends 'templates/default.php'%}
 {% block title %}Football{% endblock %}
 {% block content %}
+<select class="form-control"  onChange="document.forms['foo'].submit()">
+{%for day in days %}
+  <option>{{day}}</option>
+ {% endfor %}
+</select>
 {{mates[0].groupName }}
 {%for item in mates %}
 {% if item.groupOrderID == 1%}

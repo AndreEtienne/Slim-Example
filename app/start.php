@@ -59,6 +59,11 @@ $app->container->singleton('openliga',function(){
 	$b = $open->getMatches();
 	return $b ;
 });
+$app->container->singleton('openligaDays',function(){
+  $openGame = new Openliga;
+  $getDays =  $openGame->getDays();
+  return $getDays ;
+});
 
 
 
@@ -88,3 +93,4 @@ $view->parseOptions = [
 $view->parserExtensions =[
   new TwigExtension
 ];
+

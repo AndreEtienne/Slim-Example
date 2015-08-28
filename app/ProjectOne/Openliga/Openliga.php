@@ -120,25 +120,20 @@ class Openliga
         return $response->GetLastChangeDateByLeagueSaisonResult;
 
     }
-  
+     public function getDays() {
+        $b = new Openliga;
+        $all = $b -> getMatches();
+        $result =  array();
+        $ggroupName ="";
+        foreach ( $all as $Game) {
+          if ( $ggroupName == $Game -> groupName ) {
+          } else{
+            $ggroupName = $Game -> groupName ;
+            $result [] = $Game -> groupName  ;
+          }
+        }
+        return $result;
+    }
 }
 
-//$c = 100;
-//$h = new OpenLigaDB();
-//$b = $h->getMatches();
 
-
-//for($count = 0; $count < $c; $count++){
-//    if($b[$count]->groupOrderID == 1 && $b[$count]->groupOrderID ){
-//        print_r($b[$count]->nameTeam1.'<img src="'.$b[$count]->iconUrlTeam1.'">'. 'VS '. $b[$count]->nameTeam2.'<img src="'.$b[$count]->iconUrlTeam2.'">'."<br>");
-//    }
-
-
-
-//}
-//print_r("<br>"."<br>"."<br>");
-//for($count = 0; $count < $c; $count++){
-//   if($b[$count]->groupOrderID == 2){
-//        print_r($b[$count]->nameTeam1.'<img src="'.$b[$count]->iconUrlTeam1.'">'. 'VS '. $b[$count]->nameTeam2.'<img src="'.$b[$count]->iconUrlTeam2.'">'."<br>");
-//    }
-//}
